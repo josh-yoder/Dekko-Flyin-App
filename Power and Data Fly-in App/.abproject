@@ -2,28 +2,26 @@
   "ProjectName": "Power and Data Fly-in App",
   "ProjectGuid": "7c836980-71a5-4315-a003-04d5e95a9763",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.PowerandDataFlyinApp",
+  "AppIdentifier": "com.dekko.PowerandDataFlyinApp",
   "DisplayName": "Power and Data Fly-in App",
   "Author": "",
   "Description": "Power and Data Fly-in App",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
-    "1",
     "2"
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "6.4.0",
+  "FrameworkVersion": "5.0.0",
   "AndroidPermissions": [
     "android.permission.INTERNET"
   ],
   "DeviceOrientations": [
-    "Portrait",
     "Landscape"
   ],
-  "AndroidHardwareAcceleration": "true",
-  "iOSStatusBarStyle": "Default",
+  "AndroidHardwareAcceleration": "True",
+  "iOSStatusBarStyle": "BlackTranslucent",
   "Framework": "Cordova",
   "WP8TileTitle": "",
   "WP8Publisher": "",
@@ -41,5 +39,7 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
-  ]
+  ],
+  "iOSDeploymentTarget": "8.4",
+  "CordovaPluginVariables": {}
 }
