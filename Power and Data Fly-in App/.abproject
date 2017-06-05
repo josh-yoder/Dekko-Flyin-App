@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Power and Data Fly-in App",
+  "ProjectGuid": "7c836980-71a5-4315-a003-04d5e95a9763",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.PowerandDataFlyinApp",
+  "DisplayName": "Power and Data Fly-in App",
+  "Author": "",
+  "Description": "Power and Data Fly-in App",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "6.4.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{e54ae4b7-8948-41f3-ad73-31a7ff7b1b31}",
+  "WP8ProductID": "{4cfc6ad4-c8b6-4b8b-9947-4c9c48076fc6}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.PowerandDataFlyinApp",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
