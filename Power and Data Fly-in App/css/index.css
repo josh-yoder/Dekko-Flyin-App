@@ -1,115 +1,166 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+/*Border Animate*/
+@keyframes changescaleup {
+	from {
+        -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.0);
+	}
+	to {
+        -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+	}
 }
-
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+@keyframes changescaledown {
+	from {
+        -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.0);
+	}
+	to {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+	}
 }
-
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+html, body {
+	background-color: #FFFFFF;
+	font-family: "brandon_text", Helvetica, Arial, sans-serif;
+	color: #54585a;
+	font-size: 16px;
 }
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
-
 h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0;
+	font-size: 1.3em;
 }
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+p {
+	font-weight: 300;
+	margin: 30px 0;
+	font-size: 1.125em;
 }
-
-.event.listening {
-    background-color:#333333;
-    display:block;
+.active, .blue {
+	color: #0057b8 !important;
 }
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
+#main {
+	width: 1920px;
+	height: 1200px;
+	overflow: hidden;
 }
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.left-nav {
+	padding: 50px 0 0 50px;
+	float: left;
+	width: 400px;
+	height: 1150px;
+	position: relative;
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.left-nav div {
+	margin-bottom: 100px;
+	padding-right: 100px;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+nav ul li {
+	list-style-type: none;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin: 30px 0;
+}
+nav ul li a {
+	color: #54585a;
+	text-decoration: none;
+	font-size: 1.15em;
+}
+nav ul li a:hover {
+	color: #0057b8;
+}
+.left-nav div.logo {
+	position: absolute;
+	bottom: 50px;
+	left: 50px;
+	margin: 0;
+	padding-right: 0;
+}
+section#playbackArea {
+	width: 1470px;
+	height: 1200px;
+	float: left;
+	background: url("/img/floorplan.jpg") 0 0 no-repeat transparent;
+	position: relative;
+}
+a.close {
+	position: absolute;
+	top: 0px;
+	left: 1375px;
+	height: 55px;
+	width: 55px;
+	background-color: rgba(84, 88, 90, 0.5);
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	text-decoration: none;
+	font-size: 3em;
+	padding: 20px;
+	z-index: 1000;
+	display: none;
+}
+.video-playback a.touchpoint {
+	display: block;
+	height: 34px;
+	width: 34px;
+	position: absolute;
+	border: 5px solid #0057b8;
+	border-radius: 100%;
+	background-color: #0057b8;
+}
+.video-playback a.touchpoint:hover {
+	animation: 0.75s infinite alternate changescaleup;
+	background-color: transparent;
+}
+.video-playback a.touchpoint#lvs {
+	top: 410px;
+	left: 1340px;
+}
+.video-playback a.touchpoint#stafford {
+	top: 280px;
+	left: 500px;
+}
+.video-playback a.touchpoint#air-wedge {
+	top: 560px;
+	left: 1110px;
+}
+.video-playback a.touchpoint#duo-hat {
+	top: 570px;
+	left: 190px;
+}
+.video-playback a.touchpoint#trio-quad {
+	top: 810px;
+	left: 840px;
+}
+.video-playback a.touchpoint#uno {
+	top: 270px;
+	left: 1020px;
+}
+.video-playback a.touchpoint#retro-c {
+	top: 90px;
+	left: 730px;
+}
+.video-playback a.touchpoint span {
+	background-color: #0057b8;
+	display: block;
+	width: 34px;
+	height: 34px;
+	position: relative;
+	border-radius: 100%;
+}
+.video-playback a.touchpoint:hover span {
+	animation: 0.75s infinite alternate changescaledown;
+}
+.video-playback video {
+	display: none;
 }

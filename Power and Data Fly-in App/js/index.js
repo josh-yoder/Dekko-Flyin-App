@@ -35,16 +35,74 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
+
+        $('.touchpoint').hover(function() {
+            var touchId = $(this).attr('id');
+            $('nav ul li a.' + touchId).addClass('blue');
+        }, function() {
+            var touchId = $(this).attr('id');
+            $('nav ul li a.' + touchId).removeClass('blue');
+        });
+
+        $('.touchpoint').on('click', function(e){
+            e.preventDefault();
+            var touchId = $(this).attr('id');
+            var video = $('.video-playback').children('video.' + touchId)[0];
+            $('nav ul li a.' + touchId).addClass('active');
+            $('a.close').fadeIn();
+            $('.touchpoint').each(function(){
+                $(this).fadeOut();
+            });
+            $('.video-playback').children('video.' + touchId).show();
+
+            if(video.paused) {
+                video.play();
+            }
+
+        });
+        $('nav ul li a').on('click', function() {
+            var touchId = $(this).attr('class');
+
+            $('.touchpoint#' + touchId).trigger('click');
+        });
+        $('video').on('ended', function(){
+            var videoId = $(this).attr('class');
+            $(this).fadeOut();
+            $('.touchpoint').each(function(){
+                $(this).fadeIn();
+            });
+            $('a.close').fadeOut();
+            $('nav ul li').children('.active').removeClass('active');
+        });
+
+        $('.close').on('click', function(e){
+            e.preventDefault();
+
+            $('.touchpoint').each(function(){
+                $(this).show();
+            });
+            $('a.close').hide();
+            var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
+            var video = $('video.' + activeClass)[0];
+            
+            video.pause();
+            video.load();
+            $('nav ul li').children('.active').removeClass('active');
+            $('video.' + activeClass).hide();
+
+        });
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        // var parentElement = document.getElementById(id);
+        // var listeningElement = parentElement.querySelector('.listening');
+        // var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        // listeningElement.setAttribute('style', 'display:none;');
+        // receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        // console.log('Received Event: ' + id);
     }
 };
