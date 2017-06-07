@@ -89,7 +89,7 @@ section#playbackArea {
 	width: 1470px;
 	height: 1200px;
 	float: left;
-	background: url("/img/floorplan.jpg") 0 0 no-repeat transparent;
+	background: url("img/floorplan.jpg") 0 0 no-repeat transparent;
 	position: relative;
 }
 a.close {
