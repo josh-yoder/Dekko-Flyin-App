@@ -36,15 +36,15 @@ var app = {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
 
-        window.plugins.html5Video.initialize({
-            "lvsVideo" : "lvsflyin.mp4",
-            "staffordVideo" : "staffordflyin.mp4",
-            "duo-hatVideo" : "inlinepowerflyin.mp4",
-            "air-wedgeVideo" : "airwedgeflyin.mp4",
-            "trio-quadVideo" : "trioquadflyin.mp4",
-            "unoVideo" : "unoflyin.mp4",
-            "retro-cVideo" : "retrocflyin.mp4"
-        });
+        // window.plugins.html5Video.initialize({
+        //     "lvsVideo" : "lvsflyin.mp4",
+        //     "staffordVideo" : "staffordflyin.mp4",
+        //     "duo-hatVideo" : "inlinepowerflyin.mp4",
+        //     "air-wedgeVideo" : "airwedgeflyin.mp4",
+        //     "trio-quadVideo" : "trioquadflyin.mp4",
+        //     "unoVideo" : "unoflyin.mp4",
+        //     "retro-cVideo" : "retrocflyin.mp4"
+        // });
 
         $('.touchpoint').hover(function() {
             var touchId = $(this).attr('id');
@@ -66,12 +66,22 @@ var app = {
             $('.video-playback').children('video.' + touchId).show();
 
             if(video.paused) {
-                window.plugins.html5Video.play(touchId + "Video");
+                // window.plugins.html5Video.play(touchId + "Video");
+                video.play();
             }
 
         });
         $('nav ul li a').on('click', function() {
             var touchId = $(this).attr('class');
+
+            $('nav ul li a').each(function() {
+                if($(this).hasClass('active')) {
+                    $('.close').trigger('click');
+                    $(this).removeClass('active');
+                }
+            });
+
+            $(this).addClass('active');
 
             $('.touchpoint#' + touchId).trigger('click');
         });
