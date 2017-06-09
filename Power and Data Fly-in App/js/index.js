@@ -45,7 +45,6 @@ var app = {
         //     "unoVideo" : "unoflyin.mp4",
         //     "retro-cVideo" : "retrocflyin.mp4"
         // });
-
         $('.touchpoint').hover(function() {
             var touchId = $(this).attr('id');
             $('nav ul li a.' + touchId).addClass('blue');
@@ -66,7 +65,7 @@ var app = {
             $('.video-playback').children('video.' + touchId).show();
 
             if(video.paused) {
-                // window.plugins.html5Video.play(touchId + "Video");
+                //window.plugins.html5Video.play(touchId + "Video");
                 video.play();
             }
 
