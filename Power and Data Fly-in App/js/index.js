@@ -65,8 +65,8 @@ var app = {
             $('.video-playback').children('video.' + touchId).show();
 
             if(video.paused) {
-                window.plugins.html5Video.play(touchId + "Video");
-                //video.play();
+                //window.plugins.html5Video.play(touchId + "Video");
+                video.play();
             }
 
         });
