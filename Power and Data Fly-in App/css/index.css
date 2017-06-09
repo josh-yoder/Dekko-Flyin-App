@@ -93,7 +93,7 @@ nav ul li a:hover {
 section#playbackArea {
 	height: 100vh;
 	float: left;
-	background: url("floorplan.jpg") 0 0 no-repeat rgba(0, 0, 0, 0);
+	background: url(floorplan.jpg) 0 0 no-repeat rgba(0, 0, 0, 0);
 	background-size: cover;
 	position: relative;
 	width: 76.563vw;
