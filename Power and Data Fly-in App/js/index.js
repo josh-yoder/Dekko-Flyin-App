@@ -36,16 +36,16 @@ var app = {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
 
-        // window.plugins.html5Video.initialize({
-        //     "lvsVideo" : "lvsflyin.mp4",
-        //     "staffordVideo" : "staffordflyin.mp4",
-        //     "duo-hatVideo" : "inlinepowerflyin.mp4",
-        //     "air-wedgeVideo" : "airwedgeflyin.mp4",
-        //     "trio-quadVideo" : "trioquadflyin.mp4",
-        //     "unoVideo" : "unoflyin.mp4",
-        //     "retro-cVideo" : "retrocflyin.mp4"
-        // });
-        $('.touchpoint').hover(function() {
+        window.plugins.html5Video.initialize({
+             "lvsVideo" : "lvsflyin.mp4",
+             "staffordVideo" : "staffordflyin.mp4",
+             "duo-hatVideo" : "inlinepowerflyin.mp4",
+             "air-wedgeVideo" : "airwedgeflyin.mp4",
+             "trio-quadVideo" : "trioquadflyin.mp4",
+             "unoVideo" : "unoflyin.mp4",
+             "retro-cVideo" : "retrocflyin.mp4"
+         });
+        $('.touchpoint').hover(function() { 
             var touchId = $(this).attr('id');
             $('nav ul li a.' + touchId).addClass('blue');
         }, function() {
