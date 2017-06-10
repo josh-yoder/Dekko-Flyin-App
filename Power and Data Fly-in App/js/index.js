@@ -36,68 +36,90 @@ var app = {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
         
-        $('.touchpoint').hover(function() { 
-            var touchId = $(this).attr('id');
-            $('nav ul li a.' + touchId).addClass('blue');
+        $('.touchpoint').hover(function() {
+        	var touchId = $(this).attr('id');
+        	$('nav ul li a.' + touchId).addClass('blue');
         }, function() {
-            var touchId = $(this).attr('id');
-            $('nav ul li a.' + touchId).removeClass('blue');
+        	var touchId = $(this).attr('id');
+        	$('nav ul li a.' + touchId).removeClass('blue');
         });
 
         $('.touchpoint').on('click', function(e){
-            e.preventDefault();
-            var touchId = $(this).attr('id');
-            var video = $('.video-playback').children('video.' + touchId)[0];
-            $('nav ul li a.' + touchId).addClass('active');
-            $('a.close').fadeIn();
-            $('.touchpoint').each(function(){
-                $(this).fadeOut();
-            });
-            $('.video-playback').children('video.' + touchId).show();
+        	e.preventDefault();
+        	var touchId = $(this).attr('id');
+        	var video = $('.video-playback').children('video.' + touchId)[0];
+        	$('nav ul li a.' + touchId).addClass('active');
+        	$('a.close, a.play, a.pause').fadeIn();
+        	$('.touchpoint').each(function(){
+        		$(this).fadeOut();
+        	});
+        	$('.video-playback').children('video.' + touchId).show();
 
-            if(video.paused) {
-                video.play();
-            }
+        	if(video.paused) {
+        		video.play();
+        	}
 
         });
         $('nav ul li a').on('click', function() {
-            var touchId = $(this).attr('class'); 
+        	var touchId = $(this).attr('class');
 
-            $('nav ul li a').each(function() {
-                if($(this).hasClass('active')) {
-                    $('.close').trigger('click');
-                    $(this).removeClass('active');
-                }
-            });
+        	$('nav ul li a').each(function() {
+        		if($(this).hasClass('active')) {
+        			$('.close').trigger('click');
+        			$(this).removeClass('active');
+        		}
+        	});
 
-            $(this).addClass('active');
+        	$(this).addClass('active');
 
-            $('.touchpoint#' + touchId).trigger('click');
+        	$('.touchpoint#' + touchId).trigger('click');
         });
         $('video').on('ended', function(){
-            var videoId = $(this).attr('class');
-            $(this).fadeOut();
-            $('.touchpoint').each(function(){
-                $(this).fadeIn();
-            });
-            $('a.close').fadeOut();
-            $('nav ul li').children('.active').removeClass('active');
+        	var videoId = $(this).attr('class');
+        	$(this).fadeOut();
+        	$('.touchpoint').each(function(){
+        		$(this).fadeIn();
+        	});
+        	$('a.close, a.play, a.pause').fadeOut();
+        	$('nav ul li').children('.active').removeClass('active');
         });
 
         $('.close').on('click', function(e){
-            e.preventDefault();
+        	e.preventDefault();
 
-            $('.touchpoint').each(function(){
-                $(this).show();
-            });
-            $('a.close').hide();
-            var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
-            var video = $('video.' + activeClass)[0];
-            
-            video.pause();
-            video.load();
-            $('nav ul li').children('.active').removeClass('active');
-            $('video.' + activeClass).hide();
+        	$('.touchpoint').each(function(){
+        		$(this).show();
+        	});
+        	$('a.close, a.play, a.pause').fadeOut();
+        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
+        	var video = $('video.' + activeClass)[0];
+        	
+        	video.pause();
+        	video.load();
+        	$('nav ul li').children('.active').removeClass('active');
+        	$('video.' + activeClass).fadeOut();
+
+        });
+        $('.play').on('click', function(e){
+        	e.preventDefault();
+
+        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
+        	var video = $('video.' + activeClass)[0];
+        	
+        	if(video.paused) {
+        		video.play();
+        	}
+        });
+        $('.pause').on('click', function(e){
+        	e.preventDefault();
+        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
+        	var video = $('video.' + activeClass)[0];
+
+        	if (video.paused) {
+        		
+        	} else {
+        		video.pause();
+        	}
 
         });
 

@@ -98,7 +98,7 @@ section#playbackArea {
 	position: relative;
 	width: 76.563vw;
 }
-a.close {
+a.close, a.pause, a.play {
 	position: absolute;
 	top: 0;
 	left: 71.59vw;
@@ -113,6 +113,17 @@ a.close {
 	padding: 1.6667vh 1.04169vw;
 	z-index: 1000;
 	display: none;
+}
+a.pause {
+	top: 15.7vh;
+	font-size: 2em;
+	text-align: center;
+	padding: 2.2vh 1.4vw 1vh;
+}
+a.play {
+	top: 8vh;
+	font-size: 5em;
+	padding: 0vh 1.04169vw 3vh;
 }
 .video-playback a.touchpoint {
 	display: block;
