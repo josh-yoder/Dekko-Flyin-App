@@ -27,38 +27,39 @@ html, body {
 	background-color: #FFFFFF;
 	font-family: "brandon_text", Helvetica, Arial, sans-serif;
 	color: #54585a;
-	font-size: 1.33333vh;
-	height: 100vh;
+	font-size: 16px;
+	height: 1200px;
+	width: 1920px;
 }
 h1 {
 	font-weight: 600;
 	text-transform: uppercase;
 	margin: 0;
-	font-size: 1.3em;
+	font-size: 32px;
 }
 p {
 	font-weight: 300;
-	margin: 2.5vh 0;
-	font-size: 1.125em;
-	line-height: 2.33333vh;
+	margin: 30px 0;
+	font-size: 18px;
+	line-height: 28px;
 }
 .active, .blue {
 	color: #62b5e5 !important;
 }
 #main {
-	height: 100vh;
+	height: 1200px;
 	overflow: hidden;
 }
 .left-nav {
-	margin: 4.1667vh 0 0 4.1667vh;
+	margin: 50px 0 0 50px;
 	float: left;
-	width: 20.834vw;
-	height: 100vh;
+	width: 400px;
+	height: 1200px;
 	position: relative;
 }
 .left-nav div {
-	margin-bottom: 8.33334vh;
-	margin-right: 5.20834vw;
+	margin-bottom: 100px;
+	margin-right: 100px;
 }
 nav ul {
 	padding: 0;
@@ -69,102 +70,100 @@ nav ul li {
 	list-style-type: none;
 	font-weight: 500;
 	text-transform: uppercase;
-	margin: 2.5vh 0;
+	margin: 30px 0;
 }
 nav ul li a {
 	color: #54585a;
 	text-decoration: none;
-	font-size: 1.15em;
+	font-size: 18px;
 }
 nav ul li a:hover {
 	color: #62b5e5;
 }
 .left-nav div.logo {
 	position: absolute;
-	bottom: 8.33334vh;
+	bottom: 100px;
 	left: 0;
 	margin: 0;
 	padding-right: 0;
 }
 .logo img {
-	width: 9.115vw;
-	height: 2.24vw;
+	width: 175px;
+	height: 43px;
 }
 section#playbackArea {
-	height: 100vh;
+	height: 1200px;
 	float: left;
 	background: url(floorplan.jpg) 0 0 no-repeat rgba(0, 0, 0, 0);
-	background-size: cover;
+	background-size: contain;
 	position: relative;
-	width: 76.563vw;
+	width: 1470px;
 }
 a.close, a.pause, a.play {
+	background: url(close.png) 0 0 no-repeat transparent;
+	background-size: contain;
 	position: absolute;
 	top: 0;
-	left: 71.59vw;
-	height: 4.584vh;
-	width: 2.865vw;
-	background-color: rgba(84, 88, 90, 0.5);
+	left: 1395px;
+	height: 55px;
+	width: 55px;
 	color: #FFF;
-	text-align: center;
-	vertical-align: middle;
 	text-decoration: none;
-	font-size: 3em;
-	padding: 1.6667vh 1.04169vw;
+	padding: 10px;
 	z-index: 1000;
 	display: none;
 }
-a.pause {
-	top: 15.7vh;
-	font-size: 2em;
-	text-align: center;
-	padding: 2.2vh 1.4vw 1vh;
-}
 a.play {
-	top: 8vh;
-	font-size: 5em;
-	padding: 0vh 1.04169vw 3vh;
+	background: url(play.png) 0 0 no-repeat transparent;
+	background-size: contain;
+	top: 80px;
 }
+a.pause {
+	background: url(pause.png) 0 0 no-repeat transparent;
+	background-size: contain;
+	top: 160px;
+}
+
 .video-playback a.touchpoint {
 	display: block;
-	height: 2.834vh;
-	width: 1.771vw;
+	height: 34px;
+	width: 34px;
 	position: absolute;
-	border: 0.261vw solid #62b5e5;
+	border: 5px solid #62b5e5;
 	border-radius: 100%;
 	background-color: #62b5e5;
 }
-.video-playback a.touchpoint:hover {
+.video-playback a.touchpoint:hover, .video-playback a.touchpoint:active {
 	animation: 0.75s infinite alternate changescaleup;
 	background-color: transparent;
 }
 .video-playback a.touchpoint#lvs {
-	top: 34.1667vh;
-	left: 69.7919vw;
+	bottom: 746px;
+	left: 1340px;
 }
 .video-playback a.touchpoint#stafford {
-	top: 23.3333vh;
-	left: 26.04169vw;
+	bottom: 876px;
+	left: 500px;
 }
 .video-playback a.touchpoint#air-wedge {
-	top: 46.6667vh;
-	left: 57.8127vw;
+	bottom: 596px;
+	left: 1110px;
 }
 .video-playback a.touchpoint#duo-hat {
-	left: 9.89585vw;
-	top: 47.5vh;
+	bottom: 586px;
+	left: 190px;
 }
 .video-playback a.touchpoint#trio-quad {
-	top: 67.5vh;
-	left: 43.75vw;
+	bottom: 346px;
+	left: 840px;
 }
 .video-playback a.touchpoint#uno {
-	top: 22.5vh;
-	left: 53.125vw;
+	bottom: 886px;
+	left: 1020px;
 }
 .video-playback a.touchpoint#retro-c {
-	top: 7.5vh;
-	left: 38.02086vw;
+	bottom: 1066px;
+	left: 730px;
 }
 .video-playback a.touchpoint span {
 	background-color: #62b5e5;
@@ -179,6 +178,8 @@ a.play {
 }
 .video-playback video {
 	display: none;
-	height: 100%;
-	width: 100%;
+	height: 1200px;
+	width: 1470px;
+	background: url(floorplan.jpg) 0 0 no-repeat transparent;
+	background-size: contain;
 }
