@@ -2,7 +2,8 @@
   "CorePlugins": [
     "cordova-plugin-console",
     "cordova-plugin-crosswalk-webview@2.2.0",
-    "cordova-plugin-device-orientation",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-whitelist",

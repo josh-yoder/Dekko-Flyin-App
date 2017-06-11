@@ -4,7 +4,7 @@
   "projectVersion": 1,
   "AppIdentifier": "com.dekko.PowerandDataFlyinApp",
   "DisplayName": "Power and Data Fly-in App",
-  "Author": "",
+  "Author": "Blue Door Visuals, LLC.",
   "Description": "Power and Data Fly-in App",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -15,7 +15,8 @@
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "FrameworkVersion": "6.4.0",
   "AndroidPermissions": [
-    "android.permission.INTERNET"
+    "android.permission.INTERNET",
+    "android.permission.READ_EXTERNAL_STORAGE"
   ],
   "DeviceOrientations": [
     "Landscape"
