@@ -38,18 +38,18 @@ var app = {
         
         $('.touchpoint').hover(function() {
         	var touchId = $(this).attr('id');
-        	$('nav ul li a.' + touchId).addClass('blue');
+        	$('nav ul li span.' + touchId).addClass('blue');
         }, function() {
         	var touchId = $(this).attr('id');
-        	$('nav ul li a.' + touchId).removeClass('blue');
+        	$('nav ul li span.' + touchId).removeClass('blue');
         });
 
         $('.touchpoint').on('click', function(e){
         	e.preventDefault();
         	var touchId = $(this).attr('id');
         	var video = $('.video-playback').children('video.' + touchId)[0];
-        	$('nav ul li a.' + touchId).addClass('active');
-        	$('a.close, a.play, a.pause').fadeIn();
+        	$('nav ul li span.' + touchId).addClass('active');
+        	$('span.close, span.play, span.pause').fadeIn();
         	$('.touchpoint').each(function(){
         		$(this).fadeOut();
         	});
@@ -60,10 +60,10 @@ var app = {
         	}
 
         });
-        $('nav ul li a').on('click', function() {
+        $('nav ul li span').on('click', function() {
         	var touchId = $(this).attr('class');
 
-        	$('nav ul li a').each(function() {
+        	$('nav ul li span').each(function() {
         		if($(this).hasClass('active')) {
         			$('.close').trigger('click');
         			$(this).removeClass('active');
@@ -80,7 +80,7 @@ var app = {
         	$('.touchpoint').each(function(){
         		$(this).fadeIn();
         	});
-        	$('a.close, a.play, a.pause').fadeOut();
+        	$('span.close, span.play, span.pause').fadeOut();
         	$('nav ul li').children('.active').removeClass('active');
         });
 
@@ -90,7 +90,7 @@ var app = {
         	$('.touchpoint').each(function(){
         		$(this).show();
         	});
-        	$('a.close, a.play, a.pause').fadeOut();
+        	$('span.close, span.play, span.pause').fadeOut();
         	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
         	var video = $('video.' + activeClass)[0];
         	

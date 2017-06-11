@@ -7,7 +7,7 @@
 	}
 	to {
         -webkit-transform: scale(1.4);
-        -ms-transform: scale(1.4);
+        -ms-transform: scale(1.4); 
         transform: scale(1.4);
 	}
 }
@@ -72,12 +72,13 @@ nav ul li {
 	text-transform: uppercase;
 	margin: 30px 0;
 }
-nav ul li a {
+nav ul li span {
 	color: #54585a;
+	cursor: pointer;
 	text-decoration: none;
 	font-size: 18px;
 }
-nav ul li a:hover {
+nav ul li span:hover {
 	color: #62b5e5;
 }
 .left-nav div.logo {
@@ -99,9 +100,10 @@ section#playbackArea {
 	position: relative;
 	width: 1470px;
 }
-a.close, a.pause, a.play {
+span.close, span.pause, span.play {
 	background: url(close.png) 0 0 no-repeat transparent;
 	background-size: contain;
+	cursor: pointer;
 	position: absolute;
 	top: 0;
 	left: 1395px;
@@ -113,67 +115,69 @@ a.close, a.pause, a.play {
 	z-index: 1000;
 	display: none;
 }
-a.play {
+span.play {
 	background: url(play.png) 0 0 no-repeat transparent;
 	background-size: contain;
 	top: 80px;
 }
-a.pause {
+span.pause {
 	background: url(pause.png) 0 0 no-repeat transparent;
 	background-size: contain;
 	top: 160px;
 }
 
-.video-playback a.touchpoint {
+.video-playback span.touchpoint {
 	display: block;
 	height: 34px;
 	width: 34px;
 	position: absolute;
+	cursor: pointer;
 	border: 5px solid #62b5e5;
 	border-radius: 100%;
 	background-color: #62b5e5;
 }
-.video-playback a.touchpoint:hover, .video-playback a.touchpoint:active {
+.video-playback span.touchpoint:hover, .video-playback span.touchpoint:active {
 	animation: 0.75s infinite alternate changescaleup;
 	background-color: transparent;
 }
-.video-playback a.touchpoint#lvs {
+.video-playback span.touchpoint#lvs {
 	bottom: 746px;
 	left: 1340px;
 }
-.video-playback a.touchpoint#stafford {
+.video-playback span.touchpoint#stafford {
 	bottom: 876px;
 	left: 500px;
 }
-.video-playback a.touchpoint#air-wedge {
+.video-playback span.touchpoint#air-wedge {
 	bottom: 596px;
 	left: 1110px;
 }
-.video-playback a.touchpoint#duo-hat {
+.video-playback span.touchpoint#duo-hat {
 	bottom: 586px;
 	left: 190px;
 }
-.video-playback a.touchpoint#trio-quad {
+.video-playback span.touchpoint#trio-quad {
 	bottom: 346px;
 	left: 840px;
 }
-.video-playback a.touchpoint#uno {
+.video-playback span.touchpoint#uno {
 	bottom: 886px;
 	left: 1020px;
 }
-.video-playback a.touchpoint#retro-c {
+.video-playback span.touchpoint#retro-c {
 	bottom: 1066px;
 	left: 730px;
 }
-.video-playback a.touchpoint span {
+.video-playback span.touchpoint span {
 	background-color: #62b5e5;
 	display: block;
 	width: 100%;
 	height: 100%;
+	cursor: pointer;
 	position: relative;
 	border-radius: 100%;
 }
-.video-playback a.touchpoint:hover span {
+.video-playback span.touchpoint:hover span {
 	animation: 0.75s infinite alternate changescaledown;
 }
 .video-playback video {
