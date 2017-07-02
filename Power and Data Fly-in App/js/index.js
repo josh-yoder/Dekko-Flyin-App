@@ -36,16 +36,16 @@ var app = {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
         
-        window.plugins.html5Video.initialize({
-            "lvs" : "lvsflyins.mp4",
-            "stafford" : "staffordflyins.mp4", 
-            "duohat" : "inlinepowerflyins.mp4",
-            "airwedge" : "airwedgeflyins.mp4",
-            "trioquad" : "trioquadflyins.mp4",
-            "uno" : "unoflyins.mp4",
-            "retroc" : "retrocflyins.mp4"
+        //window.plugins.html5Video.initialize({
+        //    "lvs" : "lvsflyins.mp4",
+        //    "stafford" : "staffordflyins.mp4", 
+        //    "duohat" : "inlinepowerflyins.mp4",
+        //    "airwedge" : "airwedgeflyins.mp4",
+        //    "trioquad" : "trioquadflyins.mp4",
+        //    "uno" : "unoflyins.mp4",
+        //    "retroc" : "retrocflyins.mp4" 
             
-        });  
+        //});  
         
         $('.touchpoint').hover(function() {
         	var touchId = $(this).attr('id');

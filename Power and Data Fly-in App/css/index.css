@@ -28,8 +28,8 @@ html, body {
 	font-family: "brandon_text", Helvetica, Arial, sans-serif;
 	color: #54585a;
 	font-size: 16px;
-	height: 1200px;
-	width: 1920px;
+	height: 1536px; 
+	width: 2048px;
 }
 h1 {
 	font-weight: 600;
@@ -47,13 +47,13 @@ p {
 	color: #62b5e5 !important;
 }
 #main {
-	height: 1200px;
+	height: 1536px;
 	overflow: hidden;
 }
 .left-nav {
 	margin: 50px 0 0 50px;
 	float: left;
-	width: 400px;
+	width: 528px;
 	height: 1200px;
 	position: relative;
 }
