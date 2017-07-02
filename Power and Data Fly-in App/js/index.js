@@ -36,28 +36,43 @@ var app = {
         app.receivedEvent('deviceready');
         navigator.splashscreen.hide();
         
+        window.plugins.html5Video.initialize({
+            "lvs" : "lvsflyins.mp4",
+            "stafford" : "staffordflyins.mp4", 
+            "duohat" : "inlinepowerflyins.mp4",
+            "airwedge" : "airwedgeflyins.mp4",
+            "trioquad" : "trioquadflyins.mp4",
+            "uno" : "unoflyins.mp4",
+            "retroc" : "retrocflyins.mp4"
+            
+        });  
+        
         $('.touchpoint').hover(function() {
         	var touchId = $(this).attr('id');
-        	$('nav ul li span.' + touchId).addClass('blue');
+        	$('nav ul li span.' + touchId).addClass('active');
         }, function() {
-        	var touchId = $(this).attr('id');
-        	$('nav ul li span.' + touchId).removeClass('blue');
+        	var touchId = $(this).attr('id'); 
+        	$('nav ul li span.' + touchId).removeClass('active');
         });
 
         $('.touchpoint').on('click', function(e){
         	e.preventDefault();
-        	var touchId = $(this).attr('id');
-        	var video = $('.video-playback').children('video.' + touchId)[0];
-        	$('nav ul li span.' + touchId).addClass('active');
+        	var touchId = $(this).attr('id').replace('p', '');
+        	var video = $('.video-playback').children('video#' + touchId)[0];
+        	$('nav ul li span.' + touchId + 'p').addClass('active');
         	$('span.close, span.play, span.pause').fadeIn();
         	$('.touchpoint').each(function(){
         		$(this).fadeOut();
         	});
-        	$('.video-playback').children('video.' + touchId).show();
+        	$('.video-playback').children('video#' + touchId).show();
 
-        	if(video.paused) {
-        		video.play();
-        	}
+        	//if(video.paused) {
+                
+                
+                
+        		//window.plugins.html5Video.play(touchId);
+                video.play();
+        	//}
 
         });
         $('nav ul li span').on('click', function() {
@@ -76,7 +91,7 @@ var app = {
         });
         $('video').on('ended', function(){
         	var videoId = $(this).attr('class');
-        	$(this).fadeOut();
+        	$(this).hide();
         	$('.touchpoint').each(function(){
         		$(this).fadeIn();
         	});
@@ -91,20 +106,22 @@ var app = {
         		$(this).show();
         	});
         	$('span.close, span.play, span.pause').fadeOut();
-        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
-        	var video = $('video.' + activeClass)[0];
+        	//var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
+            var activeClass = $('video:visible').attr('class');
+            var activeClassClean = activeClass.replace('p', '');
+        	var video = $('video#' + activeClassClean)[0];
         	
         	video.pause();
         	video.load();
         	$('nav ul li').children('.active').removeClass('active');
-        	$('video.' + activeClass).fadeOut();
+        	$('video#' + activeClassClean).hide(); 
 
         });
         $('.play').on('click', function(e){
         	e.preventDefault();
-
-        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
-        	var video = $('video.' + activeClass)[0];
+            var activeClass = $('video:visible').attr('class');
+            var activeClassClean = activeClass.replace('p', '');
+        	var video = $('video#' + activeClassClean)[0];
         	
         	if(video.paused) {
         		video.play();
@@ -112,11 +129,12 @@ var app = {
         });
         $('.pause').on('click', function(e){
         	e.preventDefault();
-        	var activeClass = $('nav ul li').children('.active').attr('class').split(' ')[0];
-        	var video = $('video.' + activeClass)[0];
+            var activeClass = $('video:visible').attr('class');
+            var activeClassClean = activeClass.replace('p', '');
+        	var video = $('video#' + activeClassClean)[0];
 
         	if (video.paused) {
-        		
+        		   
         	} else {
         		video.pause();
         	}
