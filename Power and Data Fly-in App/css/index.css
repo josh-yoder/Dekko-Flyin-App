@@ -140,31 +140,31 @@ span.pause {
 	animation: 0.75s infinite alternate changescaleup;
 	background-color: transparent;
 }
-.video-playback span.touchpoint#lvs {
+.video-playback span.touchpoint#lvsp {
 	bottom: 746px;
 	left: 1340px;
 }
-.video-playback span.touchpoint#stafford {
+.video-playback span.touchpoint#staffordp {
 	bottom: 876px;
 	left: 500px;
 }
-.video-playback span.touchpoint#air-wedge {
+.video-playback span.touchpoint#airwedgep {
 	bottom: 596px;
 	left: 1110px;
 }
-.video-playback span.touchpoint#duo-hat {
+.video-playback span.touchpoint#duohatp {
 	bottom: 586px;
 	left: 190px;
 }
-.video-playback span.touchpoint#trio-quad {
+.video-playback span.touchpoint#trioquadp {
 	bottom: 346px;
 	left: 840px;
 }
-.video-playback span.touchpoint#uno {
+.video-playback span.touchpoint#unop {
 	bottom: 886px;
 	left: 1020px;
 }
-.video-playback span.touchpoint#retro-c {
+.video-playback span.touchpoint#retrocp {
 	bottom: 1066px;
 	left: 730px;
 }
